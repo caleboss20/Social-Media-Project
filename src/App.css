@@ -1,0 +1,40 @@
+@keyframes logoFade{
+ 0%{
+    opacity: 0;
+    transform: scale(0.2);
+ }
+ 100%{
+    opacity: 1;
+    transform: scale(1);
+ }
+}
+.animate-logo{
+    animation:logoFade 3.2s ease-out forwards infinite;
+}
+
+
+/* Dot animation rolling and bouncing on letters */
+@keyframes dotMoveBounce {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(24px, -10px) scale(1.2); /* roll to V */
+  }
+  40% {
+    transform: translate(48px, 0) scale(0.9); /* bounce on V */
+  }
+  60% {
+    transform: translate(72px, -8px) scale(1.1); /* roll to O */
+  }
+  80% {
+    transform: translate(96px, 0) scale(0.95); /* bounce on O */
+  }
+  100% {
+    transform: translate(0, 0) scale(1); /* return to eye */
+  }
+}
+.animate-dot {
+  animation: dotMoveBounce 4s ease-in-out forwards;
+  border-radius: 50%;
+}
