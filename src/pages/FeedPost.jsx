@@ -15,7 +15,7 @@ import programmer2 from "../assets/programmer2.mp4";
 import { EllipsisVerticalIcon, SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline";
 import FeedPostInteract from "./FeedPostInteract";
 import CommentModal from "./CommentModal";
-function Feed() {
+function FeedPost() {
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -230,4 +230,4 @@ function Feed() {
     </div>
   );
 }
-export default Feed;
+export default FeedPost;
