@@ -4,7 +4,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Splashscreen from "./Components/Splashscreen";
 import SignUp from "./Components/SignUp";
-import Login from "./Components/login";
+import Login from "./Components/Login";
 import ProfileSetUp from "./Components/ProfileSetUp";
 import HomePage from "./pages/HomePage";
 
