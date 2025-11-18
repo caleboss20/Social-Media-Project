@@ -13,8 +13,6 @@ const Splashscreen = () => {
   return (
     <div className="h-screen w-screen flex flex-col justify-center items-center bg-[#fff] gap-3">
       <div className="text-5xl font-extrabold text-blue-600">
-     
-
         <span className="relative">
           I
           <span className="absolute w-3 h-3 t-2 bg-blue-600 rounded-full animate-dot"></span>

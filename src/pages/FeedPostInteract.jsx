@@ -8,7 +8,7 @@ import {
   ShareIcon,
   BookmarkIcon,
 } from "@heroicons/react/24/outline";
-  export default function FeedPostInteract({ onCommentClick }) {
+ function FeedPostInteract({ onCommentClick }) {
   const [likesCount, setLikesCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
@@ -58,3 +58,4 @@ import {
     </>
   );
 }
+  export default FeedPostInteract

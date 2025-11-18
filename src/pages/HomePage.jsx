@@ -15,7 +15,7 @@ import mettle5 from "../assets/mettle5.jpg";
 import pitch from "../assets/pitch-competition.jpg";
 import speaker from "../assets/speaker.jpg";
 import speaker2 from "../assets/speaker2.jpg";
-import minister from "../assets/minister.jpg"
+import minister from "../assets/minister.jpg";
 
 
 function HomePage() {

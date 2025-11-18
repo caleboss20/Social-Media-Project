@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { HeartIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
 
-export default function CommentModal({ post, onClose, addComment }) {
+ function CommentModal({ post, onClose, addComment }) {
   const [input, setInput] = useState("");
   const [likesCount, setLikesCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
@@ -113,3 +113,4 @@ export default function CommentModal({ post, onClose, addComment }) {
     </div>
   );
 }
+export default CommentModal;

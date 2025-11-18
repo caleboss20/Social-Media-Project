@@ -15,7 +15,7 @@ import programmer2 from "../assets/programmer2.mp4";
 import { EllipsisVerticalIcon, SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline";
 import FeedPostInteract from "./FeedPostInteract";
 import CommentModal from "./CommentModal";
-function Feed() {
+function FeedPost() {
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -59,7 +59,7 @@ function Feed() {
     {
       id: 6,
       message:
-        "I'm really grateful to God Almighty for such a successful session last night during the Launch of my new book,The Ambassordors of",
+        "I'm really grateful to God Almighty for such a successful session last night during the Launch of my new book...",
       image: speaker2,
       name: "Lina Morey",
       tagline: "@linaspeaks",
@@ -230,4 +230,4 @@ function Feed() {
     </div>
   );
 }
-export default Feed;
+export default FeedPost;

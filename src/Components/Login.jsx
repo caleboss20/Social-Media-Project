@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 function Login() {
   return (
-    <div className="h-screen flex justify-center bg-[#fff] p-10">
+    <div className="h-screen flex justify-center bg-[#fff] pt-10">
       <div className="">
         <h2 className="text-3xl text-center font-bold">Sign In</h2>
         <p className="text-1xl text-center mt-3 text-gray-600">
