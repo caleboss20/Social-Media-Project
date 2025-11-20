@@ -16,7 +16,7 @@ function BottomNavbar() {
         <Link to={'/CreatePost'}><PlusIcon className="w-7 h-7 text-[#fff] font-bold" /></Link>
       </div>
 
-     <Link to={'/Videofeed'}> <VideoCameraIcon className="w-7 h-7 text-gray-600" /></Link>
+     <Link><VideoCameraIcon className="w-7 h-7 text-gray-600" /></Link>
       <UserCircleIcon className="w-7 h-7 text-gray-600" />
     </div>
   );
