@@ -8,10 +8,11 @@ import {
   ShareIcon,
   BookmarkIcon,
 } from "@heroicons/react/24/outline";
- function FeedPostInteract({ onCommentClick }) {
+function FeedPostInteract({ onCommentClick }) {
   const [likesCount, setLikesCount] = useState(0);
   const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+
   return (
     <>
       <div className="w-full pl-4 rounded-2xl flex gap-5 items-center bg-white-500 mt-5">
@@ -58,4 +59,4 @@ import {
     </>
   );
 }
-  export default FeedPostInteract
+export default FeedPostInteract;

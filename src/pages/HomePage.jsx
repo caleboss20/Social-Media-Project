@@ -3,7 +3,10 @@ import {
   BellIcon,
   MagnifyingGlassIcon,
   PlusIcon,
+  HeartIcon,
+ PaperAirplaneIcon
 } from "@heroicons/react/24/outline";
+import ConnectUsers from "../Components/ConnectUsers";
 import BottomNavbar from "./BottomNavbar";
 import Feed from "./FeedPost";
 import mettle1 from "../assets/mettle.jpg";
@@ -30,7 +33,7 @@ function HomePage() {
 
   return (
     <div className="h-screen w-full justify-center ">
-      <div className="flex justify-between items-center w-full h-16 pl-4 pr-4 bg-[#fff] fixed z-20 top-0 left-0 right-0 ">
+      <div className="flex justify-between items-center w-full h-20 pl-4 pr-4 bg-[#fff] fixed z-20 top-0 left-0 right-0 ">
         <div className="flex gap-3 justify-center items-center">
           <div className="w-10 h-10 border border-gray-400 rounded-full">
             <img src={mettle1} className="w-10 h-10 p-1 rounded-full" alt="" />
@@ -41,11 +44,16 @@ function HomePage() {
         </div>
 
         <div className="flex gap-3">
-          <div className="w-10 h-10 border border-gray-400 rounded-full flex justify-center items-center">
-            <MagnifyingGlassIcon className="h-6 w-6 text-gray-600" />
+          <div className="w-10 h-10 rounded-full flex justify-center items-center">
+           
+            <PlusIcon className="h-7 w-7 text-black-600 border border-2-black rounded-full " />
           </div>
-          <div className="w-10 h-10 border border-gray-400 rounded-full flex justify-center items-center">
-            <BellIcon className="h-6 w-6 text-gray-600" />
+          <div className=" relative w-10 h-10 rounded-full flex justify-center items-center">
+             <div className="absolute top-2 right-1.5 bg-red-600 w-2 h-2 rounded-full  "></div>
+            <HeartIcon className="h-7 w-7 text-black-600" />
+          </div>
+          <div className="w-10 h-10 rounded-full flex justify-center items-center">
+            <PaperAirplaneIcon className="h-7 w-7 text-black-600 rotate-320 mb-2" />
           </div>
         </div>
       </div>
@@ -81,8 +89,11 @@ function HomePage() {
           </div>
         ))}
       </div>
+       
       <BottomNavbar />
       <Feed />
+      <p className="text-blue-500 text-xl font-bold ml-85">see all</p>
+      <ConnectUsers />
     </div>
   );
 }

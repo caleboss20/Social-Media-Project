@@ -11,12 +11,45 @@ import social4 from "../assets/social4.png";
 import social5 from "../assets/social5.jpg";
 import social6 from "../assets/social6.jpg";
 import programmersvideo from "../assets/programmers.mp4";
+import football from "../assets/football.mp4";
+import parliament from "../assets/parliament.mp4";
+import news from "../assets/news.mp4";
 import programmer2 from "../assets/programmer2.mp4";
+import innovation from "../assets/innovation.mp4";
+import president from "../assets/president.mp4"
+import saudiArabia1 from "../assets/saudiArabia1.mp4"
+import saudiArabia2 from "../assets/saudiArabia2.mp4"
 import { EllipsisVerticalIcon, SpeakerWaveIcon, SpeakerXMarkIcon } from "@heroicons/react/24/outline";
 import FeedPostInteract from "./FeedPostInteract";
 import CommentModal from "./CommentModal";
+
 function FeedPost() {
   const [posts, setPosts] = useState([
+    
+
+      {
+      id: 14,
+      message: "Latest News -Saudi Arabia Invest heavily in Atrificial Intelligence.can trillions in oil buy technological dominace",
+      image: speaker,
+      name: "TechGiants",
+      hashtags:"#Artificial intelligence #Saudi Arabia #Desert nation",
+      tagline: "@techies",
+      video:saudiArabia2,
+      postimg: "",
+      comments: [],
+    },
+
+      {
+      id: 15,
+      message: "Saudi Arabia Invest heavily in Atrificial Intelligence.can trillions in oil buy technological dominace",
+      image: speaker,
+      name: "TechGiants",
+      hashtags:"#Artificial intelligence #dominance #Algorithms",
+      tagline: "@techies",
+      video:saudiArabia1,
+      postimg: "",
+      comments: [],
+    },
     {
       id: 1,
       message: "Joe Mettle has won the artist of the year award. He was interviewed and guess what..",
@@ -27,7 +60,7 @@ function FeedPost() {
       comments: [{ id: 1, username: "agnogreen", text: " Joe Mettle is a blessing", time: "18h" }],
     },
     {
-      id: 4,
+      id: 2,
       message: "Chinese Teacher speaks to CNN about electric machinery during classes which is boosting productivity in school",
       image: speaker,
       name: "China News",
@@ -37,7 +70,7 @@ function FeedPost() {
       comments: [],
     },
     {
-      id: 7,
+      id: 3,
       message: "Mark Zuckerberg and Richard Stallman speak about programming's future",
       image: speaker,
       name: "TechGiants",
@@ -47,7 +80,7 @@ function FeedPost() {
       comments: [],
     },
      {
-      id: 5,
+      id: 4,
       message:
         "The Board of Directors together with the Minority leader at parliament had such a trailblaizing moment where",
       image: minister,
@@ -57,7 +90,7 @@ function FeedPost() {
       comments: [],
     },
     {
-      id: 6,
+      id: 5,
       message:
         "I'm really grateful to God Almighty for such a successful session last night during the Launch of my new book...",
       image: speaker2,
@@ -67,18 +100,46 @@ function FeedPost() {
       comments: [],
     },
     {
-      id: 7,
-      message:
-        "Mark Zuckerberg and Richard Stallman speak about the future of programming. how programming is going to shape the future of humanity ",
+      id: 6,
+      message:"Live today friendly match.Tunisia plays friendly match prior the world cup with Brazil..",
       image: speaker,
-      name: "TechGiants",
-      tagline: "@techies",
-      video: programmersvideo,
+      name: "football.com",
+      tagline: "@live_football",
+      video: football,
       postimg: "",
       comments: [],
     },
     {
-      id: 8,
+      id: 7,
+      message:"Finance Minister says he has not signed the contract some people claimed he has signed.He defends what he knows and what he's competent for... ",
+      image: speaker,
+      name: "Parliament",
+      tagline: "@future_leaders",
+      video:parliament,
+      postimg: "",
+      comments: [],
+    },
+    { id:8,
+       image: speaker,
+      name: "Enactus_Innovations",
+      tagline: "@enactus",
+      video:innovation,
+      postimg: "",
+      comments: [],
+    },
+    {
+      id:9,
+      message:"Nicki Minaj delivers speech at UN to highlight claims of christian persecution in Nigeria",
+       image: speaker,
+      name: "SkyNews",
+      tagline: "@SkyNews",
+      video:news,
+      postimg: "",
+      comments: [],
+    },
+
+    {
+      id: 10,
       message:
         "Ceo and Founder of Reecopak Ghana: We have turned 1 million tons of planting waste including banana pseudostems into eco-friendly packaging this quarter.",
       hashtags: "#impact #innovation #EcoFriendly",
@@ -89,7 +150,7 @@ function FeedPost() {
       comments: [],
     },
     {
-      id: 9,
+      id: 11,
       message:
         "The Government of Ghana is doing it's best to pursue a data-driven fiscal strategy to boost revenue for long-term sustainability",
       image: social4,
@@ -98,8 +159,17 @@ function FeedPost() {
       postimg: social4,
       comments: [],
     },
+     {
+      id: 12,
+      message:"President John Mahama speaks in China about the future of African Youth and the reshaping of the African continent to reach the global scale",
+      image: social4,
+      name: "President",
+      tagline: "@futuristic",
+       video: president,
+      comments: [{ id: 1, username: "Wode", text: " Such a visionary Leader", time: "18h" }],
+    },
     {
-      id: 10,
+      id: 13,
       message:
         "Bitcoin is the most amazing mathematical miracle.It's better than gold.God bless Satoshi Nakamoto #legendary",
       image: social6,
@@ -108,12 +178,30 @@ function FeedPost() {
       postimg: social6,
       comments: [],
     },
+   
   ]);
 
 
+  const [followposts,setfollowPosts]=useState(
+    posts.map(post=>({
+      ...post,
+      following:false
+    }))
+  );
 
+  const toggleFollow=(id)=>{
+  setPosts(posts.map(p=>
+    p.id===id?{...p,following:!p.following}:p
+  ));
+  }
+  
+
+
+
+
+  //  const [isFollowing, setIsFollowing] = useState(false);
   const [activeCommentPost, setActiveCommentPost] = useState(null);
-  const [isFollowing, setIsFollowing] = useState(false);
+  
   // Refs and muted states
   const videoRefs = useRef([]);
   const [mutedStates, setMutedStates] = useState({}); // track mute per video
@@ -175,9 +263,9 @@ function FeedPost() {
               </div>
               <span
                 className="pt-1.5 font-bold text-blue-500 cursor-pointer"
-                onClick={()=>setIsFollowing(!isFollowing)}
+                onClick={()=>toggleFollow(post.id)}
               >
-                {isFollowing ? <span className="text-black font-bold">Following</span> : <span>Follow</span>}
+                {post.following ? <span className="text-black font-bold">Following</span> : <span>Follow</span>}
               </span>
             </div>
             <div className="flex items-center gap-3 relative">
