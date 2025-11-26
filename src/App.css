@@ -28,10 +28,10 @@
     transform: translate(72px, -8px) scale(1.1); /* roll to O */
   }
   80% {
-    transform: translate(96px, 0) scale(0.95); /* bounce on O */
+    transform: translate(90px, 0) scale(0.95); /* bounce on O */
   }
   100% {
-    transform: translate(0, 0) scale(1); /* return to eye */
+    transform: translate(96px, 0) scale(1); /* return to eye */
   }
 }
 .animate-dot {

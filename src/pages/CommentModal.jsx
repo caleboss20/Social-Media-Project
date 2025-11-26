@@ -17,13 +17,14 @@ import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
   }, []);
   // optional: focus input when modal opens
   useEffect(() => {
-    const t = setTimeout(() => {
+    const focused = setTimeout(() => {
       const el = containerRef.current?.querySelector("input");
       if (el) el.focus();
     }, 250);
-    return () => clearTimeout(t);
+     return () => clearTimeout(focused);
   }, []);
-  const handlePost = () => {
+
+  const handleComment= () => {
     if (!input.trim()) return;
     addComment(post.id, undefined, input.trim());
     setInput("");
@@ -60,19 +61,19 @@ import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
           style={{ height: "calc(75vh - 140px)" }}
         >
           {post.comments && post.comments.length > 0 ? (
-            post.comments.map((c) => (
+            post.comments.map((comment) => (
               <div
-                key={c.id}
+                key={comment.id}
                 className="flex gap-3 items-start justify-between py-3 border-b last:border-b-0"
               >
                 <div className="flex gap-5">
                   <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-sm">
-                    {c.username?.charAt(0)?.toUpperCase() || "U"}
+                    {comment.username?.charAt(0)?.toUpperCase() || "U"}
                   </div>
                   <div>
-                    <div className="text-xm font-semibold">{c.username}</div>
-                    <div className="text-gray-800">{c.text}</div>
-                    <div className="text-sm text-gray-500 mt-1">{c.time}</div>
+                    <div className="text-xm font-semibold">{comment.username}</div>
+                    <div className="text-gray-800">{comment.text}</div>
+                    <div className="text-sm text-gray-500 mt-1">{comment.time}</div>
                   </div>
                 </div>
                 <div
@@ -103,7 +104,7 @@ import { HeartIcon as HeartSolid } from "@heroicons/react/24/solid";
             className="flex-4 px-4 py-2 rounded-full border border-gray-300 text-lg placeholder:text-base focus:outline-none focus:ring-1 focus:ring-blue-400"
           />
           <button
-            onClick={handlePost}
+            onClick={handleComment}
             className="px-2 py-2 flex-1 rounded-full bg-blue-500 text-white font-medium"
           >
             <span>Send</span>
